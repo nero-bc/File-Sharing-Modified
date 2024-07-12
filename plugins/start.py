@@ -79,11 +79,11 @@ async def start_command(client: Client, message: Message):
         return
     else:
         reply_markup = InlineKeyboardMarkup([
-            [InlineKeyboardButton("ʜᴇʟᴘ", callback_data='help'),
-             InlineKeyboardButton("ᴀʙᴏᴜᴛ", callback_data='about')],
-            [InlineKeyboardButton('ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ', url='https://t.me/Anime_X_Hunters'),
-             InlineKeyboardButton('ᴏɴɢᴏɪɴɢ ᴄʜᴀɴɴᴇʟ', url='https://t.me/Ongoing_Anime_X_Hunter')],
-            [InlineKeyboardButton("ᴄʟᴏꜱᴇ", callback_data='close')]
+            [InlineKeyboardButton("Help", callback_data='help'),
+             InlineKeyboardButton("About", callback_data='about')],
+            [InlineKeyboardButton('Anime Movie', url='https://t.me/anime_movies_raven'),
+             InlineKeyboardButton('Anime Channel', url='https://t.me/Anime_Raven')],
+            [InlineKeyboardButton("Close", callback_data='close')]
         ])
         await message.reply_photo(
             photo= START_PIC,
@@ -114,15 +114,15 @@ REPLY_ERROR = "<code>Use this command as a reply to any telegram message without
 async def not_joined(client: Client, message: Message):
     buttons = [
         [
-            InlineKeyboardButton(text="ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ", url=client.invitelink),
-            InlineKeyboardButton(text="ᴏɴɢᴏɪɴɢ ᴄʜᴀɴɴᴇʟ", url=client.invitelink2),
+            InlineKeyboardButton(text="Join 1", url=client.invitelink),
+            InlineKeyboardButton(text="Join 2", url=client.invitelink2),
         ]
     ]
     try:
         buttons.append(
             [
                 InlineKeyboardButton(
-                    text='Try Again',
+                    text='🔄Try Again',
                     url=f"https://t.me/{client.username}?start={message.command[1]}"
                 )
             ]
